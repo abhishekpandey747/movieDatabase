@@ -1,0 +1,22 @@
+<div >
+<center><img id="logo" src="app/assets/omdb-logo.png">
+	<h2>Search for your favourite movie...</h2></center>
+	            <div style="margin-left: 500px;margin-right: 500px;" class="icon-addon addon-lg">
+                    <input type="text" placeholder="Search" class="form-control" id="search" ng-model="searchQuery">
+                    
+                    <label for="search" class="glyphicon glyphicon-search" rel="tooltip" title="search" ng-click="onSearch()"></label>
+                </div><br><br>
+                	<center><h3>THE LARGEST ONLINE MOVIE DATBASE</h3></center> 
+  <div id="search-result">
+      <div class="col-md-3" ng-repeat= "movie in movies" >
+      <label>
+        <center>
+          <a style="font-size: 30px; color: white; text-decoration:none; text-align: justify;" ui-sref="movDetails({id: movie.imdbID})">
+            <img width="400px" height="600px" style="padding-top:30px;" src="{{movie.Poster}}" title="{{movie.Title}}" ui-sref="movDetails({id: movie.imdbID})" class="absolute-text" />
+            {{movie.Title}}
+          </a>
+        </center>
+      </label>
+    </div>
+  </div>
+</div>

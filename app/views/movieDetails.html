@@ -1,0 +1,38 @@
+<a ui-sref = "home"><img src="app/assets/back-arrow-circle.png" ng-hide="loading"/></a>
+<center>
+	<div ng-show="loading" style="font-size: 100px; color: red">Loading...</div>
+	<div ng-hide="loading">
+</center>
+<center>
+<h1 style="text-align: center;color: Blue;">Movie Name -{{movie.Title}}</h1>
+  <p ng-show="movie.Poster" ><img src="{{movie.Poster}}" style="float: left; margin-right: 10px ; margin-bottom: 5px; border: solid black 1px; padding: 2px;max-width: 100%;
+    height: auto;"></p>
+  <div style="padding-top: 50px; text-align: justify;">
+  <p style="font-size: 40px; color: white;">Title: {{movie.Title}}</p> 
+  <p style="font-size: 20px; color: white">Year of Release: {{movie.Released}}</p> 
+  <p style="font-size: 30px; color: red">Cast: {{movie.Actors }}</p> 
+  <p style="font-size: 25px; color: white; align = auto">Director: {{movie.Director}}</p>
+  <p style="font-size: 25px; color: white; align = auto">Writer: {{movie.Writer}}</p>
+  <p style="font-size: 25px; color: white; align = auto">Plot: {{movie.Plot}}</p>  
+  <p style="font-size: 25px; color: white; align = auto">Rating: {{movie.imdbRating}}</p> 
+  </center>
+  </div>
+</div>
+<div>
+<h1 style="margin: auto; margin: auto; padding: 20px 30px"> All the reviews</h1>
+<div>
+    <ul ng-repeat="oneComment in comments" ng-if="$index > 0" style="font-size: 25px; color: brown">
+        {{$index}}-{{oneComment.comment}} will give {{oneComment.rating}} Star 
+    </ul>
+  </div>
+  <h2 style="text-align: left;">Your Review</h2>
+    <h3 style="margin: auto; margin: auto; padding: 20px 30px;float: inherit;">Comment:</h3>
+    <textarea ng-model="comment" name="comment" placeholder="enter your comment" rows="4" cols="50" style="float: inherit;"></textarea><br/>
+
+      <h3 style="margin: auto; margin: auto; padding: 20px 30px; float: inherit;">Rating:</h3>
+     <input type="number" id="rating" name="rating" ng-model="rating" min="0" max="10" style="float: inherit;">
+    <p> Please enter the number between 0-10 to see the magic
+  <br/><br/>
+  <button ng-click="searchingEnter()" style="padding: 20px 30px; background-color: white; margin: left; border-radius: 12px; font-size: 16px; display: block;float: inherit;">Submit</button>
+
+</div>
